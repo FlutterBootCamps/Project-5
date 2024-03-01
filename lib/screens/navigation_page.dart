@@ -16,14 +16,15 @@ class NavigationPage extends StatelessWidget {
       child: BlocBuilder<NavigationBloc, NavigationState>(
         builder: (context, state) {
           return Scaffold(
+            resizeToAvoidBottomInset: false,
               bottomNavigationBar: Material(
                   color: bgColor,
                   child: DefaultTabController(
                     length: 3,
+                    initialIndex: locator.currentPageIndex,
                     child: TabBar(
                         unselectedLabelColor: inactiveGreyColor,
                         labelColor: whiteColor,
-
                         labelStyle: const TextStyle(fontWeight: FontWeight.bold),
                         indicator: TopIndicator(),
                         indicatorSize: TabBarIndicatorSize.tab,
@@ -37,7 +38,7 @@ class NavigationPage extends StatelessWidget {
                               icon: Icon(Icons.airplanemode_active_outlined,)),
                           Tab(
                               text: "AlFursan",
-                              icon: SvgPicture.asset("assets/icons/saudia_icon.svg", colorFilter: ColorFilter.mode((locator.currentPageIndex == 2) ? whiteColor : inactiveGreyColor, BlendMode.srcIn),width: 40, height: 25,)),
+                              icon: SvgPicture.asset("assets/icons/saudia_icon.svg", colorFilter: ColorFilter.mode((locator.currentPageIndex == 2) ? whiteColor : inactiveGreyColor, BlendMode.srcIn,),width: 40, height: 25,)),
                         ]),
                   )),
               body: locator.pages[locator.currentPageIndex],

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project_5/bloc/home_bloc.dart';
 import 'package:project_5/data_layer/home_data_layer.dart';
 import 'package:project_5/helper/extensions/screen_helper.dart';
+import 'package:project_5/screens/check_in_page.dart';
 import 'package:project_5/utils/colors.dart';
 import 'package:project_5/widgets/action_button.dart';
 import 'package:project_5/widgets/city_select_bottom_sheet.dart';
@@ -40,7 +41,8 @@ class HomePage extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               children: [
                 // Used Inkwell instead of IconButton to avoid irrmovable auto padding.
-                Builder(builder: (context) {
+                Builder( //Wrapping the button with a builder enables us to open the drawer normally
+                  builder: (context) {
                   return IconButtonUnpadded(
                     icon: const Icon(
                       Icons.menu_rounded,
@@ -53,7 +55,9 @@ class HomePage extends StatelessWidget {
                 }),
                 ActionButton(
                   text: "Check-in",
-                  onTap: () {},
+                  onTap: () {
+                    context.push(context, CheckInPage());
+                  },
                 ),
               ],
             ),
