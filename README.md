@@ -1,32 +1,16 @@
-# App Cloning Project
-Welcome to the Flutter assignment project! In this assignment, you will be tasked with cloning a given app based on your assigned group (A, B, or C). Your objective is to implement the main functionality of the app and create at least 5 main screens.
+# floward
 
-## Task Overview
-As a trainee, you will need to follow these guidelines for completing the assignment:
-- Clone the provided app based on your assigned group.
-- Implement the main functionality of the app as accurately as possible.
-- Create at least 5 main screens of the app to demonstrate your understanding and proficiency in Flutter development.
-- Utilize all past concepts learned in Dart and Flutter.
+A new Flutter project.
 
-## Group Assignments
-You have been assigned to one of the following groups:
-- Group A: **Saudia Airline**
-- Group B: **AMC Cinemas**
-- Group C: **Floward**
+## Getting Started
 
-## Requirements
-You are not required to implement the following features in the app:
-- Advanced animations
-- Authentication system
-- Payment process integration
-- Usage of maps or external APIs
+This project is a starting point for a Flutter application.
 
-## Submission Guidelines
-- Ensure that your code is well-commented and follows best practices in Flutter development.
-- Submit your completed project by **3-Mar-2024 | 9:59 AM**.
-- Include a brief README file detailing how to run your Flutter project, screenshots, any dependencies required, and any additional notes you want to provide.
+A few resources to get you started if this is your first Flutter project:
 
-## Conclusion
-We hope this project provides you with valuable hands-on experience in Flutter development. Should you have any questions or encounter any issues during the assignment, feel free to reach out to your instructor or mentor for assistance.
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-**Happy coding!**
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
