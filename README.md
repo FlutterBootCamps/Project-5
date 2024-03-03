@@ -1,32 +1,19 @@
-# App Cloning Project
-Welcome to the Flutter assignment project! In this assignment, you will be tasked with cloning a given app based on your assigned group (A, B, or C). Your objective is to implement the main functionality of the app and create at least 5 main screens.
+application for booking airline tickets:
 
-## Task Overview
-As a trainee, you will need to follow these guidelines for completing the assignment:
-- Clone the provided app based on your assigned group.
-- Implement the main functionality of the app as accurately as possible.
-- Create at least 5 main screens of the app to demonstrate your understanding and proficiency in Flutter development.
-- Utilize all past concepts learned in Dart and Flutter.
+1- splash screen:
 
-## Group Assignments
-You have been assigned to one of the following groups:
-- Group A: **Saudia Airline**
-- Group B: **AMC Cinemas**
-- Group C: **Floward**
+<img width="243" alt="Screenshot 2024-03-03 at 5 13 30 AM" src="https://github.com/shaimaathu/Project-5/assets/155615972/10736f27-1ffe-40a2-922c-8e86c8764b81">
 
-## Requirements
-You are not required to implement the following features in the app:
-- Advanced animations
-- Authentication system
-- Payment process integration
-- Usage of maps or external APIs
+2- home screen
 
-## Submission Guidelines
-- Ensure that your code is well-commented and follows best practices in Flutter development.
-- Submit your completed project by **3-Mar-2024 | 9:59 AM**.
-- Include a brief README file detailing how to run your Flutter project, screenshots, any dependencies required, and any additional notes you want to provide.
+The page contains a side menu, and some advertisements for users, the user can also see the cities that he can travel to from any city he is in by choosing his city from a menu, and the cities he can go to will appear under the city, and also navigate between the program pages (home page, trips page, AlFursan page) using the bottom navigation bar. 
 
-## Conclusion
-We hope this project provides you with valuable hands-on experience in Flutter development. Should you have any questions or encounter any issues during the assignment, feel free to reach out to your instructor or mentor for assistance.
+<img width="226" alt="Screenshot 2024-03-03 at 5 21 29 AM" src="https://github.com/shaimaathu/Project-5/assets/155615972/540cee3b-55c0-42ea-b27c-1f832d148bcf">
 
-**Happy coding!**
+choosing the citey:
+<img width="221" alt="Screenshot 2024-03-03 at 5 13 48 AM" src="https://github.com/shaimaathu/Project-5/assets/155615972/8fbad8e2-82f1-4cd3-815c-13444823d3fd">
+
+side menu:
+<img width="225" alt="Screenshot 2024-03-03 at 5 13 38 AM" src="https://github.com/shaimaathu/Project-5/assets/155615972/df3fa1c0-f94a-47c7-8171-25f3edb04461">
+
+
