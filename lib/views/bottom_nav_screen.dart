@@ -18,7 +18,7 @@ class BottomNavScreen extends StatelessWidget {
           bottomNavigationBar: BlocBuilder<BottomNavBloc, BottomNavState>(
             builder: (context, state) {
               return BottomNavigationBar(
-                  selectedItemColor: Colors.blue,
+                  selectedItemColor:  const Color(0xff649197),
                   unselectedItemColor: Colors.grey,
                 
                   onTap: (press) {

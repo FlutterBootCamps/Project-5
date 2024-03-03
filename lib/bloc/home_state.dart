@@ -8,4 +8,6 @@ final class SuccessState extends HomeState {
 final List<Proudect> proudect1;
   SuccessState({required this.proudect1 });
 }
-// final class ErrorState extends HomeState {}
+ final class VisibleState extends HomeState {
+  bool isVisible =true;
+ }

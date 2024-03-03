@@ -16,5 +16,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
      emit(SuccessState(proudect1:products.map((e) => Proudect.fromJson(e)).toList()));
     
   });
+ 
+  
 }
 }

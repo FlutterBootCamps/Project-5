@@ -1,78 +1,89 @@
 import 'package:floward/Widget/ContainerWidget.dart';
 import 'package:floward/Widget/appbarwidget.dart';
+import 'package:floward/Widget/homewidgets.dart';
 import 'package:floward/bloc/home_bloc.dart';
-import 'package:floward/data/data_set.dart';
-import 'package:floward/data_layer/data_layer.dart';
-import 'package:floward/model/model_proudect.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
+import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
+  HomeScreen({super.key});
+  bool isVisible = true;
   @override
   Widget build(BuildContext context) {
-  // final data =GetIt.I.get<DataService>().allProducts;
+    //لازم استدعي البلوك و اعطيه الايفنت
+    BlocProvider.of<HomeBloc>(context).add(ShowEvent());
+
     return Scaffold(
-      appBar:
-          PreferredSize(preferredSize: const Size(60, 100), child: AppBarWidget()),
+      resizeToAvoidBottomInset: false,
+      appBar: PreferredSize(
+          preferredSize: const Size(60, 100), child: AppBarWidget()),
       backgroundColor: const Color(0xffffffff),
-      body:   SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           children: [
-            // GridView(
-            //         shrinkWrap: true,
-            //         gridDelegate:
-            //             const SliverGridDelegateWithFixedCrossAxisCount(
-            //           crossAxisSpacing: 20,
-            //           mainAxisSpacing: 10,
-            //           crossAxisCount: 4,
-            //         ),
-            //         children: [
-            //           Container(color: Colors.amber,height: 30,width: 30,),
-            //            Container(color: Colors.amber,height: 30,width: 30,),
-            //             Container(color: Colors.amber,height: 30,width: 30,),
-            //              Container(color: Colors.amber,height: 30,width: 30,),
-            //               Container(color: Colors.amber,height: 30,width: 30,),
-            //                Container(color: Colors.amber,height: 30,width: 30,),
-            //                 Container(color: Colors.amber,height: 30,width: 30,),
-            //                  Container(color: Colors.amber,height: 30,width: 30,),
-            //                   Container(color: Colors.amber,height: 30,width: 30,),
-            //                    Container(color: Colors.amber,height: 30,width: 30,),
-            //         ]),
-        Text('ggggggg'),
-          
+            const Text('Gift by Occasion'),
             BlocBuilder<HomeBloc, HomeState>(
-              builder: (context, state){
-                if(state is SuccessState){return
-           
-                  GridView(
-                    shrinkWrap: true,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisSpacing: 20,
-                      mainAxisSpacing: 10,
-                      crossAxisCount: 4,
+              builder: (context, state) {
+                if (state is SuccessState) {
+                  return Visibility(
+                    visible: isVisible,
+                    child: Container(
+                      child: GridView.builder(
+                        padding: const EdgeInsets.only(left: 16, right: 16),
+                        shrinkWrap: true,
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisSpacing: 8,
+                          mainAxisSpacing: 30,
+                          crossAxisCount: 4,
+                        ),
+                        itemCount: state.proudect1.length,
+                        itemBuilder: (context, index) {
+                          return ContainerWidget(
+                            item: state.proudect1[index],
+                          );
+                        },
+                      ),
                     ),
-                    children: [
-           
-         ...List.generate(state.proudect1.length, (index) {
-                        return ContainerWidget(item: state.proudect1[index],);
-                      })
-                    ],
                   );
-              
                 }
-                return Text('error');
-                
+                return const CircularProgressIndicator();
               },
-            )
+            ),
+            Container(
+                    height: 40,
+                    margin: EdgeInsets.only(left: 10, right: 10),
+                    decoration: BoxDecoration(border : Border.all(
+                            color: const Color(0xff649197),
+                            width: 1),
+                        
+                        color: const Color(0XFFFFFFFF),
+                    ),
+                    child: 
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'View All Occasions',
+                            style: TextStyle(fontWeight: FontWeight.bold,color: const Color(0xff649197),),
+                            
+                          ),Icon(Icons.keyboard_arrow_down_sharp,color: const Color(0xff649197),),
+                        ],
+                      ),
+                     ),
+            //---1----
+            Home1Widget(),
+            //-----2------
+            Home2Widget(),
+            //-----3-------
+               Home3Widget(),
           ],
         ),
       ),
     );
   }
 }
-    
+
+

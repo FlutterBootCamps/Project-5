@@ -5,6 +5,7 @@ class AppBarWidget extends StatelessWidget {
     super.key,
   });
    TextEditingController nameController = TextEditingController();
+   //bottomsheet
  void _showBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
@@ -33,13 +34,14 @@ class AppBarWidget extends StatelessWidget {
   }
   @override
   Widget build(BuildContext context) {
+    //-----textfield-------
     return AppBar(
         backgroundColor: const Color(0xfff7f6f2),
         toolbarHeight: 120,
         flexibleSpace: Column(
           children: [
             const SizedBox(
-              height: 60,
+              height: 50,
             ),
             InkWell(
               onTap: () {
@@ -76,6 +78,7 @@ class AppBarWidget extends StatelessWidget {
                 ],
               ),
             ),
+            //-----textfield-------
             Container(
               margin: EdgeInsets.only(left: 10, right: 10),
               height: 35,
