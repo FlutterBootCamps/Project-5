@@ -1,0 +1,28 @@
+name: project_5_saad_alharbi
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  url_launcher: ^6.2.5
+  flutter_svg: ^2.0.10+1
+  get_it: ^7.6.7
+  get_storage:
+  flutter_bloc: ^8.1.4
+  card_swiper: ^3.0.1
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/
