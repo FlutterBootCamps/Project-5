@@ -49,6 +49,15 @@ add promo code:
 <img width="224" alt="Screenshot 2024-03-03 at 5 15 10 AM" src="https://github.com/shaimaathu/Project-5/assets/155615972/f5e38ad9-b1ad-47a9-a66d-1912898b55d1">
 
 
+trip page:
+
+<img width="231" alt="Screenshot 2024-03-03 at 5 13 55 AM" src="https://github.com/shaimaathu/Project-5/assets/155615972/48510143-39a5-4fa6-accb-ad5870f478a5">
+
+
+AlFursan page:
+
+<img width="237" alt="Screenshot 2024-03-03 at 5 14 03 AM" src="https://github.com/shaimaathu/Project-5/assets/155615972/ffe84754-8a44-494f-a1d0-a7f5434f0821">
+
 
 
 
