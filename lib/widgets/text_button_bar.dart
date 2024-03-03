@@ -2,7 +2,16 @@ import 'package:flutter/material.dart';
 
 class TextButtonBar extends StatelessWidget {
   const TextButtonBar({
-    super.key, required this.text, required this.isIconShown, this.onTap, this.bgColor, required this.textColor, required this.iconColor, this.icon, this.padding, required this.radius,
+    super.key,
+    required this.text,
+    required this.isIconShown,
+    this.onTap,
+    this.bgColor,
+    required this.textColor,
+    required this.iconColor,
+    this.icon,
+    this.padding,
+    required this.radius,
   });
   final String text;
   final bool isIconShown;
@@ -18,15 +27,27 @@ class TextButtonBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      child:  Container(
+      child: Container(
         padding: padding,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(radius), color: bgColor,),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(radius),
+          color: bgColor,
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           mainAxisSize: MainAxisSize.max,
           children: [
-            Text(text, style: TextStyle(color: textColor, fontSize: 16, fontWeight: FontWeight.w600),),
-            (isIconShown) ? Icon(icon, color: iconColor,) : Container(),
+            Text(
+              text,
+              style: TextStyle(
+                  color: textColor, fontSize: 16, fontWeight: FontWeight.w600),
+            ),
+            (isIconShown)
+                ? Icon(
+                    icon,
+                    color: iconColor,
+                  )
+                : Container(),
           ],
         ),
       ),

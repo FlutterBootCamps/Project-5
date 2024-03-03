@@ -7,8 +7,7 @@ List<Map<String, String>> fursanData = [
   },
   {
     "topText": "Member benefits",
-    "bottomText":
-        "Start earning miles with your first flight",
+    "bottomText": "Start earning miles with your first flight",
     "imagePath": "assets/images/guy_airplane.jpg",
   },
 ];

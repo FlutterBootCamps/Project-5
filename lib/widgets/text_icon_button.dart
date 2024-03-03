@@ -5,7 +5,10 @@ import 'dart:math' as math;
 
 class TextIconButton extends StatelessWidget {
   const TextIconButton({
-    super.key, required this.text, required this.icon, this.onTap,
+    super.key,
+    required this.text,
+    required this.icon,
+    this.onTap,
   });
   final String text;
   final Icon icon;
@@ -22,14 +25,15 @@ class TextIconButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Row(
           children: [
-            Expanded(child: Text(text, style: const TextStyle(color: greyTextColor, fontSize: 16),)),
-            Transform.rotate(
-              angle: 90 * math.pi / 180,
-              child: icon)
+            Expanded(
+                child: Text(
+              text,
+              style: const TextStyle(color: greyTextColor, fontSize: 16),
+            )),
+            Transform.rotate(angle: 90 * math.pi / 180, child: icon)
           ],
         ),
-        ),
+      ),
     );
   }
 }
-

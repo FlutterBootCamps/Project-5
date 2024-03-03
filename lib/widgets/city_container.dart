@@ -1,18 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:project_5/bloc/home_bloc.dart';
 import 'package:project_5/helper/extensions/screen_helper.dart';
 import 'package:project_5/models/city_model.dart';
+import 'package:project_5/screens/book_flight_page.dart';
 import 'package:project_5/utils/colors.dart';
 
 class CityContainer extends StatelessWidget {
   const CityContainer({
-    super.key, required this.city,
+    super.key,
+    required this.city,
   });
   final CityModel city;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        context.read<HomeBloc>().add(PickToCityEvent(selectedCity: city));
+        context.push(context, BookFlightPage());
+      },
       child: Container(
         width: context.getWidth(context),
         height: 250,
@@ -20,8 +27,8 @@ class CityContainer extends StatelessWidget {
         decoration: BoxDecoration(
           border: Border.all(color: greyBorderColor, width: .5),
           image: DecorationImage(
-              colorFilter: const ColorFilter.mode(
-                  shadowOverlayColor, BlendMode.srcOver),
+              colorFilter:
+                  const ColorFilter.mode(shadowOverlayColor, BlendMode.srcOver),
               image: AssetImage(city.image!),
               fit: BoxFit.cover),
           borderRadius: const BorderRadius.all(Radius.circular(5)),
@@ -39,9 +46,16 @@ class CityContainer extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(5)),
                 color: lightSignatureGreenColor,
               ),
-              child: const Text("Popular", style: TextStyle(color: blackColor, fontWeight: FontWeight.w600),),
+              child: const Text(
+                "Popular",
+                style:
+                    TextStyle(color: blackColor, fontWeight: FontWeight.w600),
+              ),
             ),
-            const Expanded(child: SizedBox(height: 1,)),
+            const Expanded(
+                child: SizedBox(
+              height: 1,
+            )),
             SizedBox(
                 width: 230,
                 child: Text(

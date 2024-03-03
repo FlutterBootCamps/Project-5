@@ -40,13 +40,13 @@ class AddTripPage extends StatelessWidget {
           ),
           const PageHeader(
               header: "Add a trip",
-              description:
-                  "Retrieve a booking and add it to your trips."),
+              description: "Retrieve a booking and add it to your trips."),
           InkWell(
               onTap: () {},
               child: const Text("Tell me more",
                   style: TextStyle(
-                      color: signatureGreenColor,))),
+                    color: signatureGreenColor,
+                  ))),
           const SizedBox(
             height: 42,
           ),

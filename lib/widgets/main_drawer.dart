@@ -47,7 +47,7 @@ class MainDrawer extends StatelessWidget {
                   ],
                 ),
                 TextButtonBar(
-                  onTap: (){},
+                  onTap: () {},
                   text: "Travel Requirements",
                   isIconShown: true,
                   textColor: blurpleTextColor,

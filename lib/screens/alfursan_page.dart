@@ -55,7 +55,8 @@ class AlfursanPage extends StatelessWidget {
             ),
             const PageHeader(
               header: "AlFursan",
-              description: "Log in to view your Miles, book your next trip and much more.",
+              description:
+                  "Log in to view your Miles, book your next trip and much more.",
             ),
             const SizedBox(
               height: 28,
@@ -65,7 +66,9 @@ class AlfursanPage extends StatelessWidget {
               height: 450,
               child: PageView(
                 onPageChanged: (index) {
-                  context.read<HomeBloc>().add(ChangeFursanCardEvent(index: index));
+                  context
+                      .read<HomeBloc>()
+                      .add(ChangeFursanCardEvent(index: index));
                 },
                 controller: pageController,
                 scrollDirection: Axis.horizontal,
@@ -74,17 +77,26 @@ class AlfursanPage extends StatelessWidget {
                     locator.getAllFursanCards(pageController.viewportFraction),
               ),
             ),
-            const SizedBox(height: 16,),
+            const SizedBox(
+              height: 16,
+            ),
             BlocBuilder<HomeBloc, HomeState>(
               builder: (context, state) {
                 return Center(
                   child: AnimatedSmoothIndicator(
-                    onDotClicked: (index) { //In the real app there's a UI Glitch when clicking the dot indicator, it changes but the card itself dosen't switch, this has been fixed here.
-                      context.read<HomeBloc>().add(ChangeFursanCardEvent(index: index));
-                      pageController.animateToPage(index, duration: const Duration(milliseconds: 500), curve: Curves.linear);
+                    onDotClicked: (index) {
+                      //In the real app there's a UI Glitch when clicking the dot indicator, it changes but the card itself dosen't switch, this has been fixed here.
+                      context
+                          .read<HomeBloc>()
+                          .add(ChangeFursanCardEvent(index: index));
+                      pageController.animateToPage(index,
+                          duration: const Duration(milliseconds: 500),
+                          curve: Curves.linear);
                     },
                     activeIndex: locator.selectedFursanCardIndex,
-                    count: locator.getAllFursanCards(pageController.viewportFraction).length,
+                    count: locator
+                        .getAllFursanCards(pageController.viewportFraction)
+                        .length,
                     effect: const ColorTransitionEffect(
                         activeDotColor: blackColor,
                         dotColor: greyTextColor,
@@ -100,4 +112,3 @@ class AlfursanPage extends StatelessWidget {
     );
   }
 }
-

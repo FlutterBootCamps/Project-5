@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_5/data_layer/home_data_layer.dart';
 import 'package:project_5/helper/extensions/screen_helper.dart';
 import 'package:project_5/screens/add_trip_page.dart';
 import 'package:project_5/utils/colors.dart';
@@ -17,8 +18,9 @@ class TripPage extends StatelessWidget {
       drawer: const MainDrawer(),
       appBar: AppBar(
         backgroundColor: bgColor,
-        leading: Builder( //Wrapping the button with a builder enables us to open the drawer normally
-          builder: (context) {
+        leading: Builder(
+            //Wrapping the button with a builder enables us to open the drawer normally
+            builder: (context) {
           return IconButtonUnpadded(
             icon: const Icon(
               Icons.menu_rounded,
@@ -37,17 +39,29 @@ class TripPage extends StatelessWidget {
             const SizedBox(
               height: 28,
             ),
-            const Text(
-              "Trips",
-              style: TextStyle(
-                  color: whiteColor, fontSize: 32, fontWeight: FontWeight.w600),
+            (locator.getAllBookings().isEmpty)
+                ? const Column(
+                    children: [
+                      Text(
+                        "Trips",
+                        style: TextStyle(
+                            color: whiteColor,
+                            fontSize: 32,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      VectorText(
+                        image: "assets/images/man_traveling.png",
+                        topText: "No trips found",
+                        bottomText: "Add an upcoming trip or book a new flight",
+                      ),
+                    ],
+                  )
+                : Column(
+                    children: locator.getAllBookings(),
+                  ),
+            const SizedBox(
+              height: 32,
             ),
-            const VectorText(
-              image: "assets/images/man_traveling.png",
-              topText: "No trips found",
-              bottomText: "Add an upcoming trip or book a new flight",
-            ),
-            const SizedBox(height: 32,),
             BottomButton(
               text: "Add a trip",
               color: buttonSignatureGreenColor,
@@ -61,5 +75,7 @@ class TripPage extends StatelessWidget {
     );
   }
 }
+
+
 
 

@@ -4,7 +4,11 @@ import 'package:project_5/utils/colors.dart';
 
 class IconTextBar extends StatelessWidget {
   const IconTextBar({
-    super.key, required this.icon, required this.text, required this.isLink, this.onTap,
+    super.key,
+    required this.icon,
+    required this.text,
+    required this.isLink,
+    this.onTap,
   });
 
   final IconData? icon;
@@ -21,10 +25,25 @@ class IconTextBar extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Row(
           children: [
-            FaIcon(icon, color: iconColor,),
-            const SizedBox(width: 16,),
-            Expanded(child: Text(text, style: const TextStyle(color: whiteColor, fontSize: 16,),)),
-            Icon(Icons.arrow_outward_outlined, color: (isLink) ? draggbleGreyColor : noColor,)
+            FaIcon(
+              icon,
+              color: iconColor,
+            ),
+            const SizedBox(
+              width: 16,
+            ),
+            Expanded(
+                child: Text(
+              text,
+              style: const TextStyle(
+                color: whiteColor,
+                fontSize: 16,
+              ),
+            )),
+            Icon(
+              Icons.arrow_outward_outlined,
+              color: (isLink) ? draggbleGreyColor : noColor,
+            )
           ],
         ),
       ),

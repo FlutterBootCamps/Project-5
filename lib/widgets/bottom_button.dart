@@ -4,14 +4,18 @@ import 'package:project_5/utils/colors.dart';
 
 class BottomButton extends StatelessWidget {
   const BottomButton({
-    super.key,  this.color = buttonSignatureGreenColor, required this.text, this.onTap, this.height = 50, this.isDisabled = false,
+    super.key,
+    this.color = buttonSignatureGreenColor,
+    required this.text,
+    this.onTap,
+    this.height = 50,
+    this.isDisabled = false,
   });
   final Color color;
   final String text;
   final double height;
   final bool? isDisabled;
   final Function()? onTap;
-
 
   @override
   Widget build(BuildContext context) {

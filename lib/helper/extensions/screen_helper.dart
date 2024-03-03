@@ -14,13 +14,27 @@ extension Screen on BuildContext {
     return Navigator.push(context, MaterialPageRoute(builder: (route) => view));
   }
 
-  void showSnackBar(BuildContext context, String message, Color color) {
+  showSuccessSnackBar(BuildContext context, String msg) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Text(
-        message,
-        style: const TextStyle(color: whiteColor),
+        msg,
+        style: const TextStyle(
+          color: whiteColor,
+        ),
       ),
-      backgroundColor: color,
+      backgroundColor: signatureGreenColor,
+    ));
+  }
+
+  showErrorSnackBar(BuildContext context, String msg) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text(
+        msg,
+        style: const TextStyle(
+          color: whiteColor,
+        ),
+      ),
+      backgroundColor: redColor,
     ));
   }
 }

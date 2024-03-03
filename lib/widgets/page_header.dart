@@ -3,7 +3,9 @@ import 'package:project_5/utils/colors.dart';
 
 class PageHeader extends StatelessWidget {
   const PageHeader({
-    super.key, required this.header, required this.description,
+    super.key,
+    required this.header,
+    required this.description,
   });
   final String header;
   final String description;

@@ -3,7 +3,11 @@ import 'package:project_5/utils/colors.dart';
 
 class TopHeader extends StatelessWidget {
   const TopHeader({
-    super.key, required this.headerText, required this.tabText, required this.extraText, this.tabTextOnTap,
+    super.key,
+    required this.headerText,
+    required this.tabText,
+    required this.extraText,
+    this.tabTextOnTap,
   });
   final String headerText;
   final String tabText;

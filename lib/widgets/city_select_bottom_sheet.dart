@@ -21,63 +21,102 @@ class CitySelectBottomSheet extends StatelessWidget {
       width: context.getWidth(context),
       height: 250,
       decoration: const BoxDecoration(color: secondaryBgColor),
-      child:  Column(
+      child: Column(
         children: [
-          const SizedBox(height: 4,),
-          const DragIndicator(color: draggbleGreyColor,),
-           Padding(
+          const SizedBox(
+            height: 4,
+          ),
+          const DragIndicator(
+            color: draggbleGreyColor,
+          ),
+          Padding(
             padding: const EdgeInsets.symmetric(vertical: 8),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               mainAxisSize: MainAxisSize.max,
               children: [
-                const Text("Select a city", style: TextStyle(color: greyTextColor, fontSize: 14,),),
-                IconButtonUnpadded(icon: const Icon(Icons.cancel, color: lightGreyColor,), onTap: (){
-                  Navigator.pop(context);
-                },)
+                const Text(
+                  "Select a city",
+                  style: TextStyle(
+                    color: greyTextColor,
+                    fontSize: 14,
+                  ),
+                ),
+                IconButtonUnpadded(
+                  icon: const Icon(
+                    Icons.cancel,
+                    color: lightGreyColor,
+                  ),
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                )
               ],
             ),
           ),
-          const Divider(color: dividerColor, thickness: 1,),
-          TextButtonBar(text: "Dammam", isIconShown: locator.selectedCityIndex == 1, onTap: () {
-            context.read<HomeBloc>().add(ChangeCityEvent(index: 1));
-            Navigator.pop(context);
-          },
-          iconColor: limeGreenColor,
-          textColor: whiteColor,
-          radius: 0,
-          icon: Icons.check,
-          padding: const EdgeInsets.symmetric(vertical: 8),
+          const Divider(
+            color: dividerColor,
+            thickness: 1,
           ),
-          TextButtonBar(text: "Jeddah", isIconShown: locator.selectedCityIndex == 0, onTap: () {
-            context.read<HomeBloc>().add(ChangeCityEvent(index: 0));
-            Navigator.pop(context);
-          },
-          iconColor: limeGreenColor,
-          textColor: whiteColor,
-          radius: 0,
-          padding: const EdgeInsets.symmetric(vertical: 8),
-          icon: Icons.check,
+          TextButtonBar(
+            text: "Dammam",
+            isIconShown: locator.currentFromCity!.cityName == "Dammam",
+            onTap: () {
+              context
+                  .read<HomeBloc>()
+                  .add(ChangeCityEvent(city: locator.cityList[1]));
+              Navigator.pop(context);
+            },
+            iconColor: limeGreenColor,
+            textColor: whiteColor,
+            radius: 0,
+            icon: Icons.check,
+            padding: const EdgeInsets.symmetric(vertical: 8),
           ),
-          TextButtonBar(text: "Madinah", isIconShown: locator.selectedCityIndex == 2, onTap: () {
-            context.read<HomeBloc>().add(ChangeCityEvent(index: 2));
-            Navigator.pop(context);
-          },
-          iconColor: limeGreenColor,
-          textColor: whiteColor,
-          radius: 0,
-          padding: const EdgeInsets.symmetric(vertical: 8),
-          icon: Icons.check,
+          TextButtonBar(
+            text: "Jeddah",
+            isIconShown: locator.currentFromCity!.cityName == "Jeddah",
+            onTap: () {
+              context
+                  .read<HomeBloc>()
+                  .add(ChangeCityEvent(city: locator.cityList[0]));
+              Navigator.pop(context);
+            },
+            iconColor: limeGreenColor,
+            textColor: whiteColor,
+            radius: 0,
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            icon: Icons.check,
           ),
-          TextButtonBar(text: "Riyadh", isIconShown: locator.selectedCityIndex == 3, onTap: () {
-            context.read<HomeBloc>().add(ChangeCityEvent(index: 3));
-            Navigator.pop(context);
-          },
-          iconColor: limeGreenColor,
-          textColor: whiteColor,
-          radius: 0,
-          padding: const EdgeInsets.symmetric(vertical: 8),
-          icon: Icons.check,
+          TextButtonBar(
+            text: "Madinah",
+            isIconShown: locator.currentFromCity!.cityName == "Madinah",
+            onTap: () {
+              context
+                  .read<HomeBloc>()
+                  .add(ChangeCityEvent(city: locator.cityList[2]));
+              Navigator.pop(context);
+            },
+            iconColor: limeGreenColor,
+            textColor: whiteColor,
+            radius: 0,
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            icon: Icons.check,
+          ),
+          TextButtonBar(
+            text: "Riyadh",
+            isIconShown: locator.currentFromCity!.cityName == "Riyadh",
+            onTap: () {
+              context
+                  .read<HomeBloc>()
+                  .add(ChangeCityEvent(city: locator.cityList[3]));
+              Navigator.pop(context);
+            },
+            iconColor: limeGreenColor,
+            textColor: whiteColor,
+            radius: 0,
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            icon: Icons.check,
           ),
         ],
       ),

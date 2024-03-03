@@ -5,5 +5,4 @@ sealed class NavigationState {}
 
 final class NavigationInitial extends NavigationState {}
 
-final class ChangedPageState extends NavigationState {
-}
+final class ChangedPageState extends NavigationState {}
